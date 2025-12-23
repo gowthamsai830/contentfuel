@@ -44,7 +44,7 @@ export default function Header() {
               className="text-2xl font-heading font-bold"
             >
               <span className="text-primary">Content</span>
-              <span className="text-foreground">Fuels</span>
+              <span className="text-foreground">{"Fuel"}</span>
             </motion.div>
           </Link>
 
@@ -92,7 +92,6 @@ export default function Header() {
           </button>
         </div>
       </div>
-
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
