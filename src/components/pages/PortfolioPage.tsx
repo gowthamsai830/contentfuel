@@ -62,12 +62,18 @@ export default function PortfolioPage() {
                   className="group relative bg-[#1E1E1E] rounded-xl overflow-hidden hover:shadow-xl hover:shadow-primary/10 transition-all duration-300"
                 >
                   {/* Thumbnail */}
-                  {project.thumbnailImage && (
-                    <div className="aspect-[4/5] overflow-hidden relative">
-                      <Image src={project.thumbnailImage} alt={project.projectName || 'Project'} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-                  )}
+                  <div className="aspect-[4/5] overflow-hidden relative bg-primary/10">
+                    {project.thumbnailImage ? (
+                      <>
+                        <Image src={project.thumbnailImage} alt={project.projectName || 'Project'} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </>
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <span className="font-paragraph text-foreground/40 text-sm">No image available</span>
+                      </div>
+                    )}
+                  </div>
 
                   {/* Content */}
                   <div className="p-6">
