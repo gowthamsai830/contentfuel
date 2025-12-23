@@ -70,7 +70,7 @@ export default function PortfolioPage() {
                       </>
                     ) : (
                       <div className="w-full h-full flex items-center justify-center">
-                        <span className="font-paragraph text-foreground/40 text-sm">Image</span>
+                        <span className="font-paragraph text-foreground/40 text-sm"><Image src=></span>
                       </div>
                     )}
                   </div>
