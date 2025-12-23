@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Target, Eye, Heart, Sparkles } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { Image } from '@/components/ui/image';
 
 export default function AboutPage() {
   const values = [
@@ -183,11 +184,8 @@ export default function AboutPage() {
             <div className="bg-[#1E1E1E] rounded-xl overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-8 md:p-12">
                 <div className="md:col-span-1">
-                  <div className="aspect-square rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="font-heading text-6xl font-bold text-primary mb-2">GS</div>
-                      <p className="font-paragraph text-sm text-foreground/60">Founder</p>
-                    </div>
+                  <div className="aspect-square rounded-xl overflow-hidden">
+                    <Image src="https://static.wixstatic.com/media/0ae06e_1f611d334753465bbce0a6e3d15e3b14~mv2.jpg" alt="Gowtham Sai - Founder" className="w-full h-full object-cover" />
                   </div>
                 </div>
                 <div className="md:col-span-2 flex flex-col justify-center">
