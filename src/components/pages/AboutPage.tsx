@@ -95,14 +95,14 @@ export default function AboutPage() {
             >
               <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center p-12">
                 <div className="text-center">
-                  <div className="font-heading text-6xl md:text-8xl font-bold text-primary mb-4">{"100+"}</div>
+                  <div className="font-heading text-6xl md:text-8xl font-bold text-primary mb-4">
+                    100+
+                  </div>
                   <p className="font-paragraph text-xl text-foreground/80 mb-8">
                     Projects Delivered
                   </p>
-                  <p className="font-paragraph text-xl text-foreground/80">{"Worked With"}</p>
-                <div className="font-heading text-4xl md:text-6xl font-bold text-secondary mb-4">
-                    50M+
-                  </div>
+                  <p className="font-paragraph text-xl text-foreground/80">{"Collaborated with"}</p>
+                <div className="font-heading text-4xl md:text-6xl font-bold text-secondary mb-4">{"100+ Brands"}</div>
                   </div>
               </div>
             </motion.div>
@@ -208,7 +208,7 @@ export default function AboutPage() {
                   </div>
                   <div className="mt-6">
                     <a
-                      href="https://www.instagram.com/gowtham_fx._/"
+                      href="https://www.instagram.com/gowtham_sai_30/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-primary hover:text-primary/80 transition-colors font-paragraph font-medium"
