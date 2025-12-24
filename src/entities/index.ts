@@ -59,6 +59,8 @@ export interface PricingPlans {
   _id: string;
   _createdDate?: Date;
   _updatedDate?: Date;
+  /** @wixFieldType number */
+  price?: number;
   /** @wixFieldType text */
   planName?: string;
   /** @wixFieldType text */
@@ -73,8 +75,6 @@ export interface PricingPlans {
   callToActionText?: string;
   /** @wixFieldType url */
   callToActionUrl?: string;
-  /** @wixFieldType number */
-  price?: number;
 }
 
 
