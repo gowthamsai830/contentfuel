@@ -119,9 +119,7 @@ export default function HomePage() {
                             linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
         }
       `}</style>
-
       <Header />
-
       {/* --- HERO SECTION --- */}
       <section 
         className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-20"
@@ -153,7 +151,7 @@ export default function HomePage() {
               <AnimatedElement delay={100}>
                 <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl font-bold text-white leading-[0.9] tracking-tight mb-8">
                   WE BUILD <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary">CONTENT</span> THAT <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary font-fraunces">CONTENT</span> THAT <br className="font-fraunces" />
                   BUILDS BRANDS
                 </h1>
               </AnimatedElement>
@@ -216,12 +214,10 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- TICKER SECTION --- */}
       <div className="py-12 border-y border-white/5 bg-black/50 backdrop-blur-sm overflow-hidden">
         <ParallaxText>STRATEGY • PRODUCTION • GROWTH • VIRALITY • </ParallaxText>
       </div>
-
       {/* --- STICKY "WHO WE HELP" SECTION --- */}
       <section className="relative py-32 bg-background">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -297,7 +293,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- SERVICES SECTION (MAGAZINE STYLE) --- */}
       <section className="py-32 bg-[#0A0A0A] clip-diagonal relative">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -358,7 +353,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- PROCESS SECTION --- */}
       <section className="py-32 bg-background">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -395,7 +389,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- WHY US (SPLIT LAYOUT) --- */}
       <section className="py-32 bg-[#0F0F0F] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
@@ -445,7 +438,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- AWARDS SECTION --- */}
       {awards.length > 0 && (
         <section className="py-32 bg-background border-t border-white/5">
@@ -480,7 +472,6 @@ export default function HomePage() {
           </div>
         </section>
       )}
-
       {/* --- FINAL CTA --- */}
       <section className="relative py-40 overflow-hidden">
         <div className="absolute inset-0 bg-primary/10" />
@@ -508,7 +499,6 @@ export default function HomePage() {
           </AnimatedElement>
         </div>
       </section>
-
       <Footer />
     </div>
   );
