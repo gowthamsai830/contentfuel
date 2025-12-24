@@ -12,11 +12,7 @@ export default function PricingPage() {
   useEffect(() => {
     const fetchPlans = async () => {
       const { items } = await BaseCrudService.getAll<PricingPlans>('pricingplans');
-      // Remove duplicates by plan name
-      const uniquePlans = Array.from(
-        new Map(items.map(plan => [plan.planName, plan])).values()
-      );
-      setPlans(uniquePlans);
+      setPlans(items);
     };
     fetchPlans();
   }, []);
