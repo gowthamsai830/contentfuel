@@ -20,7 +20,6 @@ export default function PricingPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
-
       {/* Hero Section */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-32">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -40,7 +39,6 @@ export default function PricingPage() {
           </motion.div>
         </div>
       </section>
-
       {/* Pricing Cards */}
       <section className="py-20 md:py-32 bg-gradient-to-b from-background to-primary/5">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -61,7 +59,7 @@ export default function PricingPage() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {plans.map((plan, index) => (
+              {plans.slice(0, 3).map((plan, index) => (
                 <motion.div
                   key={plan._id}
                   initial={{ opacity: 0, y: 30 }}
@@ -117,9 +115,7 @@ export default function PricingPage() {
                         {plan.whatsIncluded.split('\n').map((item, idx) => (
                           <li key={idx} className="flex items-start space-x-2">
                             <Check className="text-primary flex-shrink-0 mt-0.5" size={16} />
-                            <span className="font-paragraph text-foreground/70 text-sm">
-                              {item.trim()}
-                            </span>
+
                           </li>
                         ))}
                       </ul>
@@ -180,7 +176,6 @@ export default function PricingPage() {
           </motion.div>
         </div>
       </section>
-
       {/* FAQ or Additional Info */}
       <section className="py-20 md:py-32 bg-background">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -210,7 +205,6 @@ export default function PricingPage() {
           </motion.div>
         </div>
       </section>
-
       <Footer />
     </div>
   );
