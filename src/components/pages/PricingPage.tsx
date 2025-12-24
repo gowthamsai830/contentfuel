@@ -30,11 +30,10 @@ export default function PricingPage() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="font-heading text-5xl md:text-7xl font-bold text-foreground mb-6">
-              Growth Plans
+              Fuel Your Content Growth
             </h1>
             <p className="font-paragraph text-xl md:text-2xl text-foreground/70 leading-relaxed">
-              Choose the plan that fits your growth goals. All plans include our signature content
-              engineering approach.
+              Choose the plan that fits your growth goals. From creators to startups, we've got the right content strategy for you.
             </p>
           </motion.div>
         </div>
@@ -88,7 +87,7 @@ export default function PricingPage() {
                     )}
                     {plan.price && (
                       <p className="font-heading text-3xl font-bold text-primary">
-                        ₹{plan.price.toLocaleString('en-IN')}
+                        ₹{plan.price.toLocaleString('en-IN')} / month
                       </p>
                     )}
                   </div>
@@ -105,32 +104,37 @@ export default function PricingPage() {
                     </div>
                   )}
 
-                  {/* What's Included */}
-                  {plan.whatsIncluded && (
+                  {/* Deliverables */}
+                  {plan.deliverables && (
                     <div className="mb-6">
                       <h4 className="font-heading text-sm font-semibold text-foreground/80 mb-3">
-                        What's Included
+                        Deliverables
                       </h4>
                       <ul className="space-y-2">
-                        {plan.whatsIncluded.split('\n').map((item, idx) => (
+                        {plan.deliverables.split('\n').map((item, idx) => (
                           <li key={idx} className="flex items-start space-x-2">
                             <Check className="text-primary flex-shrink-0 mt-0.5" size={16} />
-
+                            <span className="font-paragraph text-foreground/70 text-sm">{item.trim()}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
                   )}
 
-                  {/* Deliverables */}
-                  {plan.deliverables && (
+                  {/* Early Collaboration Benefits */}
+                  {plan.whatsIncluded && (
                     <div className="mb-8 pt-6 border-t border-primary/20">
-                      <h4 className="font-heading text-sm font-semibold text-foreground/80 mb-2">
-                        Deliverables
+                      <h4 className="font-heading text-sm font-semibold text-foreground/80 mb-3">
+                        Early Collaboration Benefits
                       </h4>
-                      <p className="font-paragraph text-foreground/70 text-sm">
-                        {plan.deliverables}
-                      </p>
+                      <ul className="space-y-2">
+                        {plan.whatsIncluded.split('\n').map((item, idx) => (
+                          <li key={idx} className="flex items-start space-x-2">
+                            <Check className="text-secondary flex-shrink-0 mt-0.5" size={16} />
+                            <span className="font-paragraph text-foreground/70 text-sm">{item.trim()}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   )}
 
