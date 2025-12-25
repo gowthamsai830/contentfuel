@@ -247,7 +247,7 @@ export default function HomePage() {
                   desc: 'Build your personal brand with viral-ready content that converts followers into fans.',
                   color: 'from-purple-500/20 to-blue-500/20',
                   border: 'border-purple-500/30',
-                  imgId: 'creators-img'
+                  imgSrc: 'https://static.wixstatic.com/media/0ae06e_7bb23447a4a74e868c6d6363469b9479~mv2.png'
                 },
                 {
                   icon: TrendingUp,
@@ -255,7 +255,7 @@ export default function HomePage() {
                   desc: 'Launch and scale with content strategies designed for rapid growth and market penetration.',
                   color: 'from-blue-500/20 to-cyan-500/20',
                   border: 'border-blue-500/30',
-                  imgId: 'startups-img'
+                  imgSrc: 'https://static.wixstatic.com/media/0ae06e_e6218992994f4c6481d82355fdbb7f25~mv2.png'
                 },
                 {
                   icon: Target,
@@ -263,7 +263,7 @@ export default function HomePage() {
                   desc: 'Elevate your brand presence with platform-native content that drives engagement and sales.',
                   color: 'from-cyan-500/20 to-emerald-500/20',
                   border: 'border-cyan-500/30',
-                  imgId: 'brands-img'
+                  imgSrc: 'https://static.wixstatic.com/media/0ae06e_d09ad507ae97404a94ff3a4a2d836212~mv2.png'
                 },
               ].map((item, idx) => (
                 <AnimatedElement key={idx} delay={idx * 100}>
@@ -279,11 +279,10 @@ export default function HomePage() {
                       </div>
                       <div className="h-64 md:h-full rounded-xl overflow-hidden relative">
                         <Image
-                          src={'https://static.wixstatic.com/media/0ae06e_a9e9042bd6b640dc82809a6aaa1cd0a4~mv2.png?originWidth=576&originHeight=576'}
+                          src={item.imgSrc}
                           alt={item.title}
                           className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 group-hover:scale-110"
-                          width={600}
-                        />
+                          width={600} />
                       </div>
                     </div>
                   </div>
