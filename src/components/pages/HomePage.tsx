@@ -119,7 +119,9 @@ export default function HomePage() {
                             linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
         }
       `}</style>
+
       <Header />
+
       {/* --- HERO SECTION --- */}
       <section 
         className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-20"
@@ -151,7 +153,7 @@ export default function HomePage() {
               <AnimatedElement delay={100}>
                 <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl font-bold text-white leading-[0.9] tracking-tight mb-8">
                   WE BUILD <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary font-fraunces">CONTENT</span> THAT <br className="font-fraunces" />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary">CONTENT</span> THAT <br />
                   BUILDS BRANDS
                 </h1>
               </AnimatedElement>
@@ -214,10 +216,12 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
       {/* --- TICKER SECTION --- */}
       <div className="py-12 border-y border-white/5 bg-black/50 backdrop-blur-sm overflow-hidden">
         <ParallaxText>STRATEGY • PRODUCTION • GROWTH • VIRALITY • </ParallaxText>
       </div>
+
       {/* --- STICKY "WHO WE HELP" SECTION --- */}
       <section className="relative py-32 bg-background">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -247,7 +251,7 @@ export default function HomePage() {
                   desc: 'Build your personal brand with viral-ready content that converts followers into fans.',
                   color: 'from-purple-500/20 to-blue-500/20',
                   border: 'border-purple-500/30',
-                  imgSrc: 'https://static.wixstatic.com/media/0ae06e_7bb23447a4a74e868c6d6363469b9479~mv2.png'
+                  imgId: 'creators-img'
                 },
                 {
                   icon: TrendingUp,
@@ -255,7 +259,7 @@ export default function HomePage() {
                   desc: 'Launch and scale with content strategies designed for rapid growth and market penetration.',
                   color: 'from-blue-500/20 to-cyan-500/20',
                   border: 'border-blue-500/30',
-                  imgSrc: 'https://static.wixstatic.com/media/0ae06e_e6218992994f4c6481d82355fdbb7f25~mv2.png'
+                  imgId: 'startups-img'
                 },
                 {
                   icon: Target,
@@ -263,7 +267,7 @@ export default function HomePage() {
                   desc: 'Elevate your brand presence with platform-native content that drives engagement and sales.',
                   color: 'from-cyan-500/20 to-emerald-500/20',
                   border: 'border-cyan-500/30',
-                  imgSrc: 'https://static.wixstatic.com/media/0ae06e_d09ad507ae97404a94ff3a4a2d836212~mv2.png'
+                  imgId: 'brands-img'
                 },
               ].map((item, idx) => (
                 <AnimatedElement key={idx} delay={idx * 100}>
@@ -279,10 +283,11 @@ export default function HomePage() {
                       </div>
                       <div className="h-64 md:h-full rounded-xl overflow-hidden relative">
                         <Image
-                          src={item.imgSrc}
+                          src={'https://static.wixstatic.com/media/0ae06e_a9e9042bd6b640dc82809a6aaa1cd0a4~mv2.png?originWidth=576&originHeight=576'}
                           alt={item.title}
                           className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 group-hover:scale-110"
-                          width={600} />
+                          width={600}
+                        />
                       </div>
                     </div>
                   </div>
@@ -292,6 +297,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
       {/* --- SERVICES SECTION (MAGAZINE STYLE) --- */}
       <section className="py-32 bg-[#0A0A0A] clip-diagonal relative">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -352,6 +358,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
       {/* --- PROCESS SECTION --- */}
       <section className="py-32 bg-background">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -388,6 +395,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
       {/* --- WHY US (SPLIT LAYOUT) --- */}
       <section className="py-32 bg-[#0F0F0F] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
@@ -437,6 +445,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
       {/* --- AWARDS SECTION --- */}
       {awards.length > 0 && (
         <section className="py-32 bg-background border-t border-white/5">
@@ -471,6 +480,7 @@ export default function HomePage() {
           </div>
         </section>
       )}
+
       {/* --- FINAL CTA --- */}
       <section className="relative py-40 overflow-hidden">
         <div className="absolute inset-0 bg-primary/10" />
@@ -498,6 +508,7 @@ export default function HomePage() {
           </AnimatedElement>
         </div>
       </section>
+
       <Footer />
     </div>
   );
