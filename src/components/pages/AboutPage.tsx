@@ -102,7 +102,7 @@ export default function AboutPage() {
                     Projects Delivered
                   </p>
                   <p className="font-paragraph text-xl text-foreground/80">{"Collaborated with"}</p>
-                <div className="font-heading text-4xl md:text-6xl font-bold text-secondary mb-4">{"50+"}</div>
+                <div className="font-heading text-4xl md:text-6xl font-bold text-secondary mb-4">{"50"}</div>
                   </div>
               </div>
             </motion.div>
