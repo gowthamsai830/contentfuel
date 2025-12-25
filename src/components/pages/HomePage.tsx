@@ -460,7 +460,7 @@ export default function HomePage() {
                           <Image src={award.awardImage} alt={award.awardName} className="w-full h-full object-cover" />
                         </div>
                       )}
-                      <span className="text-sm font-mono text-white/40 border border-white/10 px-2 py-1 rounded">2025</span>
+                      <span className="text-sm font-mono text-white/40 border border-white/10 px-2 py-1 rounded">{2022,2023,2024}</span>
                     </div>
                     <h3 className="font-heading text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">{award.awardName}</h3>
                     <p className="text-sm text-white/50 mb-4">{award.awardingBody}</p>
