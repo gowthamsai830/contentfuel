@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import ThemeToggle from '@/components/ThemeToggle';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,41 +35,63 @@ export default function Header() {
         isScrolled ? 'bg-background/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16 py-4 flex items-center justify-between">
-        <Link to="/" className="font-heading text-2xl font-bold text-white">
-          Content Fuel
-        </Link>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`font-paragraph text-sm transition-colors ${
-                location.pathname === link.path
-                  ? 'text-primary'
-                  : 'text-foreground/80 hover:text-primary'
-              }`}
+      <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-2 group">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="text-2xl font-heading font-bold"
             >
-              {link.name}
-            </Link>
-          ))}
-        </nav>
+              <span className="text-primary">Content</span>
+              <span className="text-foreground">{"Fuel"}</span>
+            </motion.div>
+          </Link>
 
-        {/* Right Side: Theme Toggle + Mobile Menu */}
-        <div className="flex items-center gap-4">
-          <ThemeToggle />
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`font-paragraph text-base transition-colors relative group ${
+                  location.pathname === link.path
+                    ? 'text-primary'
+                    : 'text-foreground/80 hover:text-primary'
+                }`}
+              >
+                {link.name}
+                <span
+                  className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                    location.pathname === link.path ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}
+                />
+              </Link>
+            ))}
+          </nav>
+
+          {/* CTA Button */}
+          <div className="hidden lg:block">
+            <a
+              href="https://wa.me/918500871360"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground font-paragraph font-medium rounded-lg hover:bg-primary/90 transition-all duration-300 hover:scale-105"
+            >
+              Start a Project
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
+            className="lg:hidden text-foreground p-2"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
-
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (

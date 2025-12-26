@@ -17,30 +17,6 @@ export default function PricingPage() {
     fetchPlans();
   }, []);
 
-  // Update Creator Ignite plan on component mount
-  useEffect(() => {
-    const updateCreatorIgnite = async () => {
-      try {
-        const creatorIgnite = plans.find(plan => plan.planName === 'Creator Ignite');
-        if (creatorIgnite && creatorIgnite.platformFocus?.includes('Moj')) {
-          await BaseCrudService.update<PricingPlans>('pricingplans', {
-            _id: creatorIgnite._id,
-            platformFocus: 'Instagram Reels, YouTube Shorts, Snapchat Spotlight, Josh'
-          });
-          // Refresh the plans
-          const { items } = await BaseCrudService.getAll<PricingPlans>('pricingplans');
-          setPlans(items);
-        }
-      } catch (error) {
-        console.error('Error updating Creator Ignite plan:', error);
-      }
-    };
-
-    if (plans.length > 0) {
-      updateCreatorIgnite();
-    }
-  }, [plans.length]);
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
