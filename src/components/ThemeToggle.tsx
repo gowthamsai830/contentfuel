@@ -4,9 +4,26 @@ import { Moon, Sun } from 'lucide-react';
 import { useThemeStore } from '@/store/themeStore';
 
 export default function ThemeToggle() {
-  const { theme, toggleTheme } = useThemeStore();
+  const { theme, toggleTheme, setTheme } = useThemeStore();
 
-  // Apply theme to document
+  // Initialize theme on mount
+  useEffect(() => {
+    const root = document.documentElement;
+    const savedTheme = sessionStorage.getItem('theme') as 'dark' | 'light' | null;
+    const initialTheme = savedTheme || 'dark';
+    
+    setTheme(initialTheme);
+    
+    if (initialTheme === 'light') {
+      root.classList.add('light-mode');
+      root.classList.remove('dark-mode');
+    } else {
+      root.classList.add('dark-mode');
+      root.classList.remove('light-mode');
+    }
+  }, [setTheme]);
+
+  // Apply theme to document when it changes
   useEffect(() => {
     const root = document.documentElement;
     if (theme === 'light') {

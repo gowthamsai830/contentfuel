@@ -9,13 +9,8 @@ interface ThemeStore {
 }
 
 export const useThemeStore = create<ThemeStore>((set) => {
-  // Initialize theme from sessionStorage or default to 'dark'
-  const initialTheme = (typeof window !== 'undefined' 
-    ? sessionStorage.getItem('theme') as Theme | null 
-    : null) || 'dark';
-
   return {
-    theme: initialTheme,
+    theme: 'dark',
     setTheme: (theme: Theme) => {
       if (typeof window !== 'undefined') {
         sessionStorage.setItem('theme', theme);
