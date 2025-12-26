@@ -37,7 +37,6 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
-
       {/* Hero Section */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-32">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -56,7 +55,6 @@ export default function ContactPage() {
           </motion.div>
         </div>
       </section>
-
       {/* Contact Methods */}
       <section className="py-20 md:py-32 bg-gradient-to-b from-background to-primary/5">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -129,9 +127,7 @@ export default function ContactPage() {
               <p className="font-paragraph text-foreground/70 text-sm mb-4">
                 Follow our work
               </p>
-              <p className="font-paragraph text-secondary font-medium">
-                @gowtham_fx._
-              </p>
+              <p className="font-paragraph text-secondary font-medium">{"@gowtham_g_"}</p>
             </motion.a>
           </div>
 
@@ -222,7 +218,6 @@ export default function ContactPage() {
           </motion.div>
         </div>
       </section>
-
       {/* Map or Additional Info */}
       <section className="py-20 md:py-32 bg-background">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -243,7 +238,6 @@ export default function ContactPage() {
           </motion.div>
         </div>
       </section>
-
       <Footer />
     </div>
   );

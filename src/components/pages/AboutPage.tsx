@@ -31,7 +31,6 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
-
       {/* Hero Section */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-32">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -51,7 +50,6 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </section>
-
       {/* Brand Story */}
       <section className="py-20 md:py-32 bg-gradient-to-b from-background to-primary/5">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -115,7 +113,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
       {/* Vision & Values */}
       <section className="py-20 md:py-32 bg-background">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -158,7 +155,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
       {/* Founder Section */}
       <section className="py-20 md:py-32 bg-gradient-to-b from-background to-primary/5">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -185,7 +181,13 @@ export default function AboutPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-8 md:p-12">
                 <div className="md:col-span-1">
                   <div className="aspect-square rounded-xl overflow-hidden">
-                    <Image src="https://static.wixstatic.com/media/0ae06e_1f611d334753465bbce0a6e3d15e3b14~mv2.jpg" alt="Gowtham Sai - Founder" className="w-full h-full object-cover" />
+                    <Image
+                      src="https://static.wixstatic.com/media/0ae06e_f7ec111e19354f9492949e0215be848f~mv2.jpg"
+                      className="w-full h-full object-cover"
+                      originWidth={1999}
+                      originHeight={1999}
+                      focalPointX={43.99699849924962}
+                      focalPointY={17.45872936468234} />
                   </div>
                 </div>
                 <div className="md:col-span-2 flex flex-col justify-center">
@@ -210,7 +212,7 @@ export default function AboutPage() {
                   </div>
                   <div className="mt-6">
                     <a
-                      href="https://www.instagram.com/gowtham_fx._/"
+                      href="https://www.instagram.com/gowtham_sai_30/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-primary hover:text-primary/80 transition-colors font-paragraph font-medium"
@@ -225,7 +227,6 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="py-20 md:py-32 bg-background">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -254,7 +255,6 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </section>
-
       <Footer />
     </div>
   );
