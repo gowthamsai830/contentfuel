@@ -490,39 +490,7 @@ export default function HomePage() {
         </div>
       </section>
       {/* --- AWARDS SECTION --- */}
-      {awards.length > 0 && (
-        <section className="py-32 bg-background border-t border-white/5">
-          <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
-            <AnimatedElement>
-              <div className="text-center mb-20">
-                <Award className="w-12 h-12 text-primary mx-auto mb-6" />
-                <h2 className="font-heading text-4xl md:text-6xl font-bold text-white mb-4">RECOGNITION</h2>
-                <p className="text-white/60">Excellence in content creation and strategy</p>
-              </div>
-            </AnimatedElement>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {awards.map((award, index) => (
-                <AnimatedElement key={award._id} delay={index * 100}>
-                  <div className="bg-[#1A1A1A] p-8 rounded-2xl border border-white/5 hover:border-primary/30 transition-all group">
-                    <div className="flex justify-between items-start mb-6">
-                      {award.awardImage && (
-                        <div className="w-16 h-16 rounded-lg overflow-hidden bg-white/5">
-                          <Image src={award.awardImage} alt={award.awardName} className="w-full h-full object-cover" />
-                        </div>
-                      )}
-                      <span className="text-sm font-mono text-white/40 border border-white/10 px-2 py-1 rounded">{award.yearReceived}</span>
-                    </div>
-                    <h3 className="font-heading text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">{award.awardName}</h3>
-                    <p className="text-sm text-white/50 mb-4">{award.awardingBody}</p>
-                    <p className="text-white/70 text-sm leading-relaxed">{award.description}</p>
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
       {/* --- FINAL CTA --- */}
       <section className="relative py-40 overflow-hidden">
         <div className="absolute inset-0 bg-primary/10" />
