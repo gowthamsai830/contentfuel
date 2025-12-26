@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, useSpring, useMotionValue, useMotionTemplate } from 'framer-motion';
-import { ArrowRight, Zap, TrendingUp, Target, Award, CheckCircle2, Play, Instagram, Video, Camera } from 'lucide-react';
+import { ArrowRight, Zap, TrendingUp, Target, CheckCircle2, Play, Instagram, Video, Camera, BarChart3, Layers, Award } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { BaseCrudService } from '@/integrations';
@@ -119,9 +119,7 @@ export default function HomePage() {
                             linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
         }
       `}</style>
-
       <Header />
-
       {/* --- HERO SECTION --- */}
       <section 
         className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-20"
@@ -216,12 +214,10 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- TICKER SECTION --- */}
       <div className="py-12 border-y border-white/5 bg-black/50 backdrop-blur-sm overflow-hidden">
         <ParallaxText>STRATEGY • PRODUCTION • GROWTH • VIRALITY • </ParallaxText>
       </div>
-
       {/* --- STICKY "WHO WE HELP" SECTION --- */}
       <section className="relative py-32 bg-background">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -283,11 +279,13 @@ export default function HomePage() {
                       </div>
                       <div className="h-64 md:h-full rounded-xl overflow-hidden relative">
                         <Image
-                          src={'https://static.wixstatic.com/media/0ae06e_a9e9042bd6b640dc82809a6aaa1cd0a4~mv2.png?originWidth=576&originHeight=576'}
-                          alt={item.title}
+                          src="https://static.wixstatic.com/media/0ae06e_d850642d78894eeab7923caa09081960~mv2.jpg"
                           className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 group-hover:scale-110"
                           width={600}
-                        />
+                          originWidth={6016}
+                          originHeight={4016}
+                          focalPointX={54.712433510638306}
+                          focalPointY={33.98904382470119} />
                       </div>
                     </div>
                   </div>
@@ -297,7 +295,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- SERVICES SECTION (MAGAZINE STYLE) --- */}
       <section className="py-32 bg-[#0A0A0A] clip-diagonal relative">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -358,7 +355,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- PROCESS SECTION --- */}
       <section className="py-32 bg-background">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
@@ -395,7 +391,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- WHY US (SPLIT LAYOUT) --- */}
       <section className="py-32 bg-[#0F0F0F] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
@@ -445,7 +440,55 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      {/* --- OUR CONTENT PHILOSOPHY SECTION --- */}
+      <section className="py-32 bg-background border-t border-white/5">
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
+          <AnimatedElement>
+            <div className="text-center mb-20">
+              <h2 className="font-heading text-4xl md:text-6xl font-bold text-white mb-6">
+                OUR <span className="text-primary">CONTENT</span> PHILOSOPHY
+              </h2>
+              <p className="font-paragraph text-lg text-white/60 max-w-2xl mx-auto">
+                Our approach is built on cumulative experience across creators, brands, and digital-first projects.
+              </p>
+            </div>
+          </AnimatedElement>
 
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: BarChart3,
+                title: 'Every Platform Has Its Own Rules',
+                body: 'Content doesn\'t fail because it\'s bad — it fails when it isn\'t built for how a platform actually works. We analyze audience behavior, algorithms, and content consumption patterns before execution.',
+              },
+              {
+                icon: Play,
+                title: 'Storytelling Over Trends',
+                body: 'Trends can amplify reach, but storytelling builds trust and recall. We combine timely formats with narrative structure that keeps audiences engaged beyond the first few seconds.',
+              },
+              {
+                icon: Layers,
+                title: 'Systems Over Virality',
+                body: 'One viral video is noise. Repeatable systems create growth. We focus on building content frameworks that compound performance month after month.',
+              },
+            ].map((item, index) => (
+              <AnimatedElement key={index} delay={index * 100}>
+                <div className="bg-[#1A1A1A] p-8 rounded-2xl border border-white/5 hover:border-primary/30 transition-all group h-full flex flex-col">
+                  <div className="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-black transition-colors">
+                    <item.icon size={24} />
+                  </div>
+                  <h3 className="font-heading text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="font-paragraph text-white/70 text-base leading-relaxed">
+                    {item.body}
+                  </p>
+                </div>
+              </AnimatedElement>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* --- AWARDS SECTION --- */}
       {awards.length > 0 && (
         <section className="py-32 bg-background border-t border-white/5">
@@ -480,7 +523,6 @@ export default function HomePage() {
           </div>
         </section>
       )}
-
       {/* --- FINAL CTA --- */}
       <section className="relative py-40 overflow-hidden">
         <div className="absolute inset-0 bg-primary/10" />
@@ -508,7 +550,6 @@ export default function HomePage() {
           </AnimatedElement>
         </div>
       </section>
-
       <Footer />
     </div>
   );
