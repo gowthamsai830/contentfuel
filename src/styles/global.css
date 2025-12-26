@@ -9,20 +9,154 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar for webkit browsers */
-::-webkit-scrollbar {
+/* Dark Mode (Default) */
+html.dark-mode,
+html:not(.light-mode) {
+  --background: #121212;
+  --foreground: #FFFFFF;
+  --primary: #BB86FC;
+  --primary-foreground: #000000;
+  --secondary: #03DAC5;
+  --secondary-foreground: #000000;
+  --destructive: #F44336;
+  --destructive-foreground: #FFFFFF;
+}
+
+/* Light Mode */
+html.light-mode {
+  --background: #F8F6FB;
+  --foreground: #1A1A1A;
+  --primary: #6200EE;
+  --primary-foreground: #FFFFFF;
+  --secondary: #03A9A9;
+  --secondary-foreground: #FFFFFF;
+  --destructive: #D32F2F;
+  --destructive-foreground: #FFFFFF;
+}
+
+/* Apply theme colors to body and root elements */
+html.light-mode {
+  background-color: #F8F6FB;
+  color: #1A1A1A;
+}
+
+html.light-mode body {
+  background-color: #F8F6FB;
+  color: #1A1A1A;
+}
+
+/* Smooth transition for theme changes */
+html,
+body,
+* {
+  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out, border-color 0.4s ease-in-out;
+}
+
+/* Custom scrollbar for webkit browsers - Dark Mode */
+html.dark-mode ::-webkit-scrollbar {
   width: 10px;
 }
 
-::-webkit-scrollbar-track {
+html.dark-mode ::-webkit-scrollbar-track {
   background: #121212;
 }
 
-::-webkit-scrollbar-thumb {
+html.dark-mode ::-webkit-scrollbar-thumb {
   background: #BB86FC;
   border-radius: 5px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+html.dark-mode ::-webkit-scrollbar-thumb:hover {
   background: #6200EE;
+}
+
+/* Custom scrollbar for webkit browsers - Light Mode */
+html.light-mode ::-webkit-scrollbar {
+  width: 10px;
+}
+
+html.light-mode ::-webkit-scrollbar-track {
+  background: #F8F6FB;
+}
+
+html.light-mode ::-webkit-scrollbar-thumb {
+  background: #6200EE;
+  border-radius: 5px;
+}
+
+html.light-mode ::-webkit-scrollbar-thumb:hover {
+  background: #3700B3;
+}
+
+/* Light Mode Specific Styles */
+html.light-mode .bg-background {
+  @apply bg-[#F8F6FB];
+}
+
+html.light-mode .text-foreground {
+  @apply text-[#1A1A1A];
+}
+
+html.light-mode .text-white {
+  @apply text-[#1A1A1A];
+}
+
+html.light-mode .text-white\/60 {
+  @apply text-[#666666];
+}
+
+html.light-mode .text-white\/70 {
+  @apply text-[#555555];
+}
+
+html.light-mode .text-white\/80 {
+  @apply text-[#444444];
+}
+
+html.light-mode .text-white\/90 {
+  @apply text-[#333333];
+}
+
+html.light-mode .bg-white\/5 {
+  @apply bg-[#3700B3]/5;
+}
+
+html.light-mode .bg-white\/10 {
+  @apply bg-[#3700B3]/10;
+}
+
+html.light-mode .border-white\/5 {
+  @apply border-[#3700B3]/10;
+}
+
+html.light-mode .border-white\/10 {
+  @apply border-[#3700B3]/20;
+}
+
+html.light-mode .border-white\/20 {
+  @apply border-[#3700B3]/30;
+}
+
+html.light-mode .bg-black {
+  @apply bg-[#FFFFFF];
+}
+
+html.light-mode .bg-black\/50 {
+  @apply bg-[#F0F0F0];
+}
+
+html.light-mode .bg-black\/80 {
+  @apply bg-[#E0E0E0];
+}
+
+html.light-mode .bg-\[\#0A0A0A\] {
+  @apply bg-[#F5F5F5];
+}
+
+html.light-mode .bg-\[\#0F0F0F\] {
+  @apply bg-[#F0F0F0];
+}
+
+html.light-mode .bg-\[\#1A1A1A\] {
+  @apply bg-[#EFEFEF];
 }

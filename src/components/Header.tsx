@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,9 +36,41 @@ export default function Header() {
         isScrolled ? 'bg-background/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
+      <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16 py-4 flex items-center justify-between">
+        <Link to="/" className="font-heading text-2xl font-bold text-white">
+          Content Fuel
+        </Link>
 
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <Link
+              key={link.path}
+              to={link.path}
+              className={`font-paragraph text-sm transition-colors ${
+                location.pathname === link.path
+                  ? 'text-primary'
+                  : 'text-foreground/80 hover:text-primary'
+              }`}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Right Side: Theme Toggle + Mobile Menu */}
+        <div className="flex items-center gap-4">
+          <ThemeToggle />
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
+
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
