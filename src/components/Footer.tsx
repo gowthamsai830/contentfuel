@@ -107,6 +107,11 @@ export default function Footer() {
               Designed for growth. Built for creators.
             </p>
           </div>
+          <div className="mt-6 pt-6 border-t border-primary/5">
+            <p className="font-paragraph text-foreground/40 text-xs tracking-wide">
+              An idea from Brand Origin
+            </p>
+          </div>
         </div>
       </div>
     </footer>
