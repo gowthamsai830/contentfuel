@@ -279,13 +279,13 @@ export default function HomePage() {
                       </div>
                       <div className="h-64 md:h-full rounded-xl overflow-hidden relative">
                         <Image
-                          src="https://static.wixstatic.com/media/0ae06e_88f7808da0c447fbb26f54a16fb42dd9~mv2.jpg"
+                          src="https://static.wixstatic.com/media/0ae06e_d850642d78894eeab7923caa09081960~mv2.jpg"
                           className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 group-hover:scale-110"
                           width={600}
-                          originWidth={4813}
-                          originHeight={3209}
-                          focalPointX={49.016552392824984}
-                          focalPointY={34.93300093487068} />
+                          originWidth={6016}
+                          originHeight={4016}
+                          focalPointX={54.712433510638306}
+                          focalPointY={33.98904382470119} />
                       </div>
                     </div>
                   </div>
