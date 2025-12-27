@@ -247,7 +247,8 @@ export default function HomePage() {
                   desc: 'Build your personal brand with viral-ready content that converts followers into fans.',
                   color: 'from-purple-500/20 to-blue-500/20',
                   border: 'border-purple-500/30',
-                  imgId: 'creators-img'
+                  imgId: 'creators-img',
+                  imgUrl: 'https://static.wixstatic.com/media/0ae06e_08d0e707a94e47a192a7ad81905ce9fe~mv2.png?originWidth=576&originHeight=384'
                 },
                 {
                   icon: TrendingUp,
@@ -255,7 +256,8 @@ export default function HomePage() {
                   desc: 'Launch and scale with content strategies designed for rapid growth and market penetration.',
                   color: 'from-blue-500/20 to-cyan-500/20',
                   border: 'border-blue-500/30',
-                  imgId: 'startups-img'
+                  imgId: 'startups-img',
+                  imgUrl: 'https://static.wixstatic.com/media/0ae06e_906ac9a8ac3344cb8c0a66d2351af110~mv2.png?originWidth=576&originHeight=384'
                 },
                 {
                   icon: Target,
@@ -263,7 +265,8 @@ export default function HomePage() {
                   desc: 'Elevate your brand presence with platform-native content that drives engagement and sales.',
                   color: 'from-cyan-500/20 to-emerald-500/20',
                   border: 'border-cyan-500/30',
-                  imgId: 'brands-img'
+                  imgId: 'brands-img',
+                  imgUrl: 'https://static.wixstatic.com/media/0ae06e_e00ed8f6622a432b8ab49dcd034db1b4~mv2.png?originWidth=576&originHeight=384'
                 },
               ].map((item, idx) => (
                 <AnimatedElement key={idx} delay={idx * 100}>
@@ -279,13 +282,11 @@ export default function HomePage() {
                       </div>
                       <div className="h-64 md:h-full rounded-xl overflow-hidden relative">
                         <Image
-                          src="https://static.wixstatic.com/media/0ae06e_d850642d78894eeab7923caa09081960~mv2.jpg"
+                          src={item.imgUrl}
+                          alt={item.title}
                           className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 group-hover:scale-110"
                           width={600}
-                          originWidth={6016}
-                          originHeight={4016}
-                          focalPointX={54.712433510638306}
-                          focalPointY={33.98904382470119} />
+                        />
                       </div>
                     </div>
                   </div>
