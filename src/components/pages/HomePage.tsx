@@ -248,7 +248,7 @@ export default function HomePage() {
                   color: 'from-purple-500/20 to-blue-500/20',
                   border: 'border-purple-500/30',
                   imgId: 'creators-img',
-                  imgUrl: 'https://static.wixstatic.com/media/0ae06e_08d0e707a94e47a192a7ad81905ce9fe~mv2.png?originWidth=576&originHeight=384'
+                  imgUrl: 'https://static.wixstatic.com/media/0ae06e_f3b11db57c884ce8b533c11d8e32c27b~mv2.jpg'
                 },
                 {
                   icon: TrendingUp,
