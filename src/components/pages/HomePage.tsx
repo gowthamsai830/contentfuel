@@ -257,7 +257,7 @@ export default function HomePage() {
                   color: 'from-blue-500/20 to-cyan-500/20',
                   border: 'border-blue-500/30',
                   imgId: 'startups-img',
-                  imgUrl: 'https://static.wixstatic.com/media/0ae06e_906ac9a8ac3344cb8c0a66d2351af110~mv2.png?originWidth=576&originHeight=384'
+                  imgUrl: 'https://static.wixstatic.com/media/0ae06e_6dd801c2ad014a069861abae035c6eb7~mv2.jpg'
                 },
                 {
                   icon: Target,
