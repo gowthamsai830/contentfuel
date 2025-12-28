@@ -46,7 +46,7 @@ export default function ServicesPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 md:pt-40 md:pb-32">
+      <section className="pt-20 pb-12 md:pt-28 md:pb-16">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -65,7 +65,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-background to-primary/5">
+      <section className="py-12 md:py-16 bg-gradient-to-b from-background to-primary/5">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {services.map((service, index) => (
