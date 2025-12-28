@@ -266,7 +266,7 @@ export default function HomePage() {
                   color: 'from-cyan-500/20 to-emerald-500/20',
                   border: 'border-cyan-500/30',
                   imgId: 'brands-img',
-                  imgUrl: 'https://static.wixstatic.com/media/0ae06e_e00ed8f6622a432b8ab49dcd034db1b4~mv2.png?originWidth=576&originHeight=384'
+                  imgUrl: 'https://static.wixstatic.com/media/0ae06e_da8e27b72868416ea3c85b9a961223ac~mv2.jpg'
                 },
               ].map((item, idx) => (
                 <AnimatedElement key={idx} delay={idx * 100}>
