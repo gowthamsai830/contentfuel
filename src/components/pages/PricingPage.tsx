@@ -6,6 +6,35 @@ import Footer from '@/components/Footer';
 import { BaseCrudService } from '@/integrations';
 import { PricingPlans } from '@/entities';
 
+const WHATSAPP_PHONE = '918500871360';
+
+const planMessages: Record<string, { button: string; message: string }> = {
+  'Creator Ignite': {
+    button: 'Ignite My Content',
+    message: "Hi 👋 I'm reaching out to Content Fuel. I'm a creator and interested in the Creator Ignite plan. Can you please share the next steps?"
+  },
+  'Brand Accelerator': {
+    button: 'Accelerate My Brand',
+    message: "Hi 👋 I'm reaching out to Content Fuel. I'm interested in the Brand Accelerator plan and would like to understand scope and next steps."
+  },
+  'Startup Scale': {
+    button: 'Scale My Startup',
+    message: "Hi 👋 I'm reaching out to Content Fuel. I'm interested in the Startup Scale plan and would like to discuss growth and execution."
+  }
+};
+
+const getWhatsAppLink = (planName: string): string => {
+  const config = planMessages[planName];
+  if (!config) return `https://wa.me/${WHATSAPP_PHONE}`;
+  
+  const encodedMessage = encodeURIComponent(config.message);
+  return `https://wa.me/${WHATSAPP_PHONE}?text=${encodedMessage}`;
+};
+
+const getButtonText = (planName: string): string => {
+  return planMessages[planName]?.button || 'Get Started';
+};
+
 export default function PricingPage() {
   const [plans, setPlans] = useState<PricingPlans[]>([]);
 
@@ -207,9 +236,9 @@ export default function PricingPage() {
                   )}
 
                   {/* CTA */}
-                  {plan.callToActionText && plan.callToActionUrl && (
+                  {plan.planName && (
                     <a
-                      href={plan.callToActionUrl}
+                      href={getWhatsAppLink(plan.planName)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`block w-full text-center px-6 py-3 font-paragraph font-medium rounded-lg transition-all duration-300 hover:scale-105 mt-auto ${
@@ -218,7 +247,7 @@ export default function PricingPage() {
                           : 'bg-transparent text-primary border border-primary hover:bg-primary/10'
                       }`}
                     >
-                      {plan.callToActionText}
+                      {getButtonText(plan.planName)}
                     </a>
                   )}
                 </motion.div>
