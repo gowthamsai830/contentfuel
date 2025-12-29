@@ -17,27 +17,53 @@ export default function PricingPage() {
     fetchPlans();
   }, []);
 
-  // Update Creator Ignite plan on component mount
+  // Update pricing plans with new deliverables and outcome lines
   useEffect(() => {
-    const updateCreatorIgnite = async () => {
+    const updatePricingPlans = async () => {
       try {
         const creatorIgnite = plans.find(plan => plan.planName === 'Creator Ignite');
-        if (creatorIgnite && creatorIgnite.platformFocus?.includes('Moj')) {
+        const brandAccelerator = plans.find(plan => plan.planName === 'Brand Accelerator');
+        const startupScale = plans.find(plan => plan.planName === 'Startup Scale');
+
+        const disclaimerText = 'Exact content mix, duration, and execution may vary based on strategy and business goals.';
+
+        if (creatorIgnite) {
           await BaseCrudService.update<PricingPlans>('pricingplans', {
             _id: creatorIgnite._id,
-            platformFocus: 'Instagram Reels, YouTube Shorts, Snapchat Spotlight, Josh'
+            deliverables: '8 high-impact short-form videos (up to 60 seconds each)\nContent script refinement tailored to the creator\'s personality\nViral hook and retention design for each video\nGuided or assisted video shooting support\nProfessional editing (cuts, captions, pacing)',
+            outcomeLine: 'Built for consistency, discovery, and creator clarity.',
+            disclaimerText: disclaimerText
           });
-          // Refresh the plans
-          const { items } = await BaseCrudService.getAll<PricingPlans>('pricingplans');
-          setPlans(items);
         }
+
+        if (brandAccelerator) {
+          await BaseCrudService.update<PricingPlans>('pricingplans', {
+            _id: brandAccelerator._id,
+            deliverables: '12 short-form videos (60–90 seconds each)\nBrand-aligned content scripting and positioning\nConversion-focused hook and engagement design\nOn-ground or guided shooting support\nPremium editing optimized for brand recall and engagement',
+            outcomeLine: 'Designed to build trust, engagement, and brand authority.',
+            disclaimerText: disclaimerText
+          });
+        }
+
+        if (startupScale) {
+          await BaseCrudService.update<PricingPlans>('pricingplans', {
+            _id: startupScale._id,
+            deliverables: '20 monthly content assets including short-form videos and selected mid-form videos (up to 8–10 minutes where required)\nDeep script refinement and narrative storytelling\nAdvanced hook, retention, and CTA strategy\nStrategic shooting plan with execution support\nHigh-end editing optimized for growth and scalability',
+            outcomeLine: 'Focused on authority, inbound leads, and scalable visibility.',
+            disclaimerText: disclaimerText
+          });
+        }
+
+        // Refresh the plans
+        const { items } = await BaseCrudService.getAll<PricingPlans>('pricingplans');
+        setPlans(items);
       } catch (error) {
-        console.error('Error updating Creator Ignite plan:', error);
+        console.error('Error updating pricing plans:', error);
       }
     };
 
     if (plans.length > 0) {
-      updateCreatorIgnite();
+      updatePricingPlans();
     }
   }, [plans.length]);
 
@@ -89,7 +115,7 @@ export default function PricingPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`bg-[#1E1E1E] rounded-xl p-8 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 relative ${
+                  className={`bg-[#1E1E1E] rounded-xl p-8 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 relative flex flex-col ${
                     index === 1 ? 'lg:scale-105 border-2 border-primary' : ''
                   }`}
                 >
@@ -145,6 +171,24 @@ export default function PricingPage() {
                     </div>
                   )}
 
+                  {/* Outcome Line */}
+                  {plan.outcomeLine && (
+                    <div className="mb-6 p-4 bg-primary/10 rounded-lg border border-primary/20">
+                      <p className="font-paragraph text-sm text-primary font-medium italic">
+                        {plan.outcomeLine}
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Disclaimer */}
+                  {plan.disclaimerText && (
+                    <div className="mb-6 p-3 bg-foreground/5 rounded-lg border border-foreground/10">
+                      <p className="font-paragraph text-xs text-foreground/60">
+                        {plan.disclaimerText}
+                      </p>
+                    </div>
+                  )}
+
                   {/* Early Collaboration Benefits */}
                   {plan.whatsIncluded && (
                     <div className="mb-8 pt-6 border-t border-primary/20">
@@ -168,7 +212,7 @@ export default function PricingPage() {
                       href={plan.callToActionUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`block w-full text-center px-6 py-3 font-paragraph font-medium rounded-lg transition-all duration-300 hover:scale-105 ${
+                      className={`block w-full text-center px-6 py-3 font-paragraph font-medium rounded-lg transition-all duration-300 hover:scale-105 mt-auto ${
                         index === 1
                           ? 'bg-primary text-primary-foreground hover:bg-primary/90'
                           : 'bg-transparent text-primary border border-primary hover:bg-primary/10'

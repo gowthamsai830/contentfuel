@@ -75,6 +75,10 @@ export interface PricingPlans {
   callToActionText?: string;
   /** @wixFieldType url */
   callToActionUrl?: string;
+  /** @wixFieldType text */
+  outcomeLine?: string;
+  /** @wixFieldType text */
+  disclaimerText?: string;
 }
 
 
