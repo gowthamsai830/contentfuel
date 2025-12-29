@@ -69,7 +69,7 @@ export default function Footer() {
                 <span>gscreations830@gmail.com</span>
               </a>
               <a
-                href="https://wa.me/918500871360"
+                href="https://wa.me/918309951360"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 font-paragraph text-foreground/70 hover:text-whatsapp-green transition-colors text-sm group"

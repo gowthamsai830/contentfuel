@@ -507,7 +507,7 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <a
-                href="https://wa.me/918500871360"
+                href="https://wa.me/918309951360"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-10 py-5 bg-whatsapp-green text-white font-bold text-xl rounded-full hover:bg-whatsapp-green/90 transition-all hover:scale-105 shadow-lg shadow-whatsapp-green/20 flex items-center gap-3"
