@@ -19,7 +19,7 @@ export default function ContactPage() {
     
     // Create WhatsApp message
     const message = `Hi! I'm ${formData.name}. ${formData.goal}`;
-    const whatsappUrl = `https://wa.me/918500871360?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/918309951360?text=${encodeURIComponent(message)}`;
     
     // Open WhatsApp
     window.open(whatsappUrl, '_blank');
