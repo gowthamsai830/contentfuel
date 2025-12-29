@@ -109,7 +109,7 @@ export default function ContactPage() {
 
             {/* Instagram */}
             <motion.a
-              href="https://www.instagram.com/gowtham_sai_30/"
+              href="https://www.instagram.com/contentfuel.live/"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 30 }}
