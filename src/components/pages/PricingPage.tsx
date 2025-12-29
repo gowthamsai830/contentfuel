@@ -11,15 +11,19 @@ const WHATSAPP_PHONE = '918500871360';
 const planMessages: Record<string, { button: string; message: string }> = {
   'Creator Ignite': {
     button: 'Ignite My Content',
-    message: "Hi 👋 I'm reaching out to Content Fuel. I'm a creator and interested in the Creator Ignite plan. Can you please share the next steps?"
+    message: "Hi there,\nI'm reaching out to Content Fuel.\n\nI'm a creator and interested in the Creator Ignite plan.\nCan you please share the next steps?"
   },
   'Brand Accelerator': {
     button: 'Accelerate My Brand',
-    message: "Hi 👋 I'm reaching out to Content Fuel. I'm interested in the Brand Accelerator plan and would like to understand scope and next steps."
+    message: "Hi there,\nI'm reaching out to Content Fuel.\n\nI'm interested in the Brand Accelerator plan and would like to understand scope and next steps."
   },
   'Startup Scale': {
     button: 'Scale My Startup',
-    message: "Hi 👋 I'm reaching out to Content Fuel. I'm interested in the Startup Scale plan and would like to discuss growth and execution."
+    message: "Hi there,\nI'm reaching out to Content Fuel.\n\nI'm interested in the Startup Scale plan and would like to discuss growth and execution."
+  },
+  'Custom Plan': {
+    button: 'Discuss Custom Plan',
+    message: "Hi there,\nI'm reaching out to Content Fuel.\n\nI have custom requirements and would like to discuss a tailored content plan."
   }
 };
 
@@ -267,12 +271,12 @@ export default function PricingPage() {
               Need something custom? We create tailored plans for unique requirements.
             </p>
             <a
-              href="https://wa.me/918500871360"
+              href={getWhatsAppLink('Custom Plan')}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-8 py-4 bg-transparent text-primary border border-primary font-paragraph font-medium rounded-lg hover:bg-primary/10 transition-all duration-300"
             >
-              Discuss Custom Plan
+              {getButtonText('Custom Plan')}
             </a>
           </motion.div>
         </div>
