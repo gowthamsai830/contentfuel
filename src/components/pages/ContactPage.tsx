@@ -127,7 +127,7 @@ export default function ContactPage() {
               <p className="font-paragraph text-foreground/70 text-sm mb-4">
                 Follow our work
               </p>
-              <p className="font-paragraph text-secondary font-medium">{"@gowtham_g_"}</p>
+              <p className="font-paragraph text-secondary font-medium">{"@conentfuel.live"}</p>
             </motion.a>
           </div>
 
