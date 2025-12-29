@@ -244,7 +244,7 @@ export default function AboutPage() {
               Ready to transform your content into a growth engine? Let's start the conversation.
             </p>
             <a
-              href="https://wa.me/918500871360"
+              href="https://wa.me/918309951360"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-8 py-4 bg-primary text-primary-foreground font-paragraph font-medium rounded-lg hover:bg-primary/90 transition-all duration-300 hover:scale-105 group"

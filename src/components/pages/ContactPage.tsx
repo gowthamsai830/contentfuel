@@ -61,7 +61,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
             {/* WhatsApp */}
             <motion.a
-              href="https://wa.me/918500871360"
+              href="https://wa.me/918309951360"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 30 }}
