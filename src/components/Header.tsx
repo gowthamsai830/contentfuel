@@ -73,7 +73,7 @@ export default function Header() {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <a
-              href="https://wa.me/918500871360"
+              href="https://wa.me/918309951360"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground font-paragraph font-medium rounded-lg hover:bg-primary/90 transition-all duration-300 hover:scale-105"
