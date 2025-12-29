@@ -165,7 +165,7 @@ export default function HomePage() {
               <AnimatedElement delay={300}>
                 <div className="flex flex-col sm:flex-row gap-6">
                   <a
-                    href="https://wa.me/918500871360"
+                    href="https://wa.me/918309951360"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative px-8 py-4 bg-white text-black font-bold text-lg rounded-none overflow-hidden transition-all hover:bg-primary hover:text-white"
