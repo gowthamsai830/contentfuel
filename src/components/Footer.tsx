@@ -85,7 +85,7 @@ export default function Footer() {
             <h3 className="font-heading text-lg font-semibold text-foreground">Follow Us</h3>
             <div className="flex space-x-4">
               <a
-                href="https://www.instagram.com/gowtham_fx._/"
+                href="https://www.instagram.com/contentfuel.live/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
