@@ -70,7 +70,12 @@ export default function PortfolioPage() {
                       </>
                     ) : (
                       <div className="w-full h-full flex items-center justify-center">
-                        <span className="font-paragraph text-foreground/40 text-sm">No image available</span>
+                        <Image
+                          src="https://static.wixstatic.com/media/0ae06e_0daca34350ec4e71b95e9382bea8b34d~mv2.png?id=portfolio-placeholder"
+                          alt="Portfolio placeholder"
+                          className="w-full h-full object-cover"
+                          width={600}
+                        />
                       </div>
                     )}
                   </div>
